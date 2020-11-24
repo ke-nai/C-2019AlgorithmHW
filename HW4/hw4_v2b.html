@@ -1,0 +1,124 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>hw4_v2.md</title><style></style></head><body id="preview">
+<h2 class="code-line" data-line-start=0 data-line-end=2 ><a id="COMP319_Algorithms_Spring_2019_0"></a>COMP319 Algorithms, Spring 2019</h2>
+<h2 class="code-line" data-line-start=2 data-line-end=4 ><a id="Programming_Assignment_4_2"></a>Programming Assignment 4</h2>
+<h4 class="code-line" data-line-start=4 data-line-end=5 ><a id="Instructor_GilJin_Jang_gjangknuackr_School_of_Electronics_Engineering_4"></a>Instructor: Gil-Jin Jang (<a href="mailto:gjang@knu.ac.kr">gjang@knu.ac.kr</a>), School of Electronics Engineering</h4>
+<hr>
+<h3 class="code-line" data-line-start=6 data-line-end=7 ><a id="1_01_knapsack_problem_6"></a>1. 0-1 knapsack problem</h3>
+<p class="has-line-data" data-line-start="8" data-line-end="9">Knapsack problem is finding a best subset of given items that satisfies:</p>
+<ul>
+<li class="has-line-data" data-line-start="9" data-line-end="10">the sum of the item weights is less than the capacity of the knapsack (<em>W</em>).</li>
+<li class="has-line-data" data-line-start="10" data-line-end="12">the sum of the item values is maximized.</li>
+</ul>
+<p class="has-line-data" data-line-start="12" data-line-end="13">If we allow 0-1 choices only, the items are indivisible, and the relaxed problem can be solved with dynamic programming.</p>
+<ul>
+<li class="has-line-data" data-line-start="14" data-line-end="18">
+<p class="has-line-data" data-line-start="14" data-line-end="15"><strong>To do:</strong> Design an algorithm that finds:</p>
+<ul>
+<li class="has-line-data" data-line-start="15" data-line-end="16">the subset of the items by their numbers (chosen from 1 to <em>N</em>).</li>
+<li class="has-line-data" data-line-start="16" data-line-end="18">the maximum value.</li>
+</ul>
+</li>
+<li class="has-line-data" data-line-start="18" data-line-end="19">
+<p class="has-line-data" data-line-start="18" data-line-end="19"><strong>INPUT:</strong> The input is given by a text file, with each row represents each item’s weight and value. The last line is the maximum weight followed by -1, so you can finish reading the file if the input number is -1.</p>
+</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="20" data-line-end="26">2 3
+3 4
+4 6
+5 7
+8 -1
+</code></pre>
+<p class="has-line-data" data-line-start="26" data-line-end="27">All the values are POSITIVE integers. You may use file I/O, or standard input. From the input file, number of items <em>n</em> = 4, (weight, benefit) of the items are: <code>(2,3), (3,4), (4,6), (5,7)</code>, and <em>W</em> = 8 (max weight).</p>
+<ul>
+<li class="has-line-data" data-line-start="28" data-line-end="29"><strong>OUTPUT:</strong></li>
+</ul>
+<pre><code class="has-line-data" data-line-start="30" data-line-end="32">2 4 11
+</code></pre>
+<h3 class="code-line" data-line-start=33 data-line-end=34 ><a id="2_01_knapsack_with_one_item_split_33"></a>2. 0-1 knapsack with one item split</h3>
+<p class="has-line-data" data-line-start="35" data-line-end="36">In this problem, it is assumed that ONLY ONE item can be split by HALVES — one item is split into two items with the same weight and the same value, half the weight and half the value, respectively. We may choose one half-split item, or whole item, whichever maximizes the value.</p>
+<ul>
+<li class="has-line-data" data-line-start="37" data-line-end="42">
+<p class="has-line-data" data-line-start="37" data-line-end="38"><strong>To do:</strong> Design an algorithm that finds:</p>
+<ul>
+<li class="has-line-data" data-line-start="38" data-line-end="39">the subset of the items by their numbers (chosen from 1 to <em>N</em>).</li>
+<li class="has-line-data" data-line-start="39" data-line-end="40">the maximum value.</li>
+<li class="has-line-data" data-line-start="40" data-line-end="42">if necessary, specify one item to be split by halves by appending <strong>‘x0.5’</strong> to the item number.</li>
+</ul>
+</li>
+<li class="has-line-data" data-line-start="42" data-line-end="44">
+<p class="has-line-data" data-line-start="42" data-line-end="43"><strong>Note:</strong> when the weights and values are odd numbers, their split weights and values may have fractional parts (0.5). If you use a dynamic programming algorithm (probably), those odd number cases should be considered.</p>
+</li>
+<li class="has-line-data" data-line-start="44" data-line-end="45">
+<p class="has-line-data" data-line-start="44" data-line-end="45"><strong>INPUT:</strong> The input is given by a text file, with each row represents each item’s weight and value. The last line is the maximum weight followed by -1, so you can finish reading the file if the input number is -1.</p>
+</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="46" data-line-end="52">2 3
+3 4
+4 6
+5 7
+8 -1
+</code></pre>
+<p class="has-line-data" data-line-start="52" data-line-end="53">All the values are POSITIVE integers. You may use file I/O, or standard input. From the input file, number of items <em>n</em> = 4, (weight, benefit) of the items are: <code>(2,3), (3,4), (4,6), (5,7)</code>, and <em>W</em> = 8 (max weight).</p>
+<ul>
+<li class="has-line-data" data-line-start="54" data-line-end="55"><strong>OUTPUT:</strong></li>
+</ul>
+<pre><code class="has-line-data" data-line-start="56" data-line-end="58">1x0.5 2 3 11.5
+</code></pre>
+<h3 class="code-line" data-line-start=59 data-line-end=60 ><a id="3_01_knapsack_with_one_duplicate_item_59"></a>3. 0-1 knapsack with one duplicate item</h3>
+<p class="has-line-data" data-line-start="61" data-line-end="62">Same as problem 2, except that <strong>EXACTLY ONE ITEM</strong> and be added <strong>TWICE</strong>.</p>
+<ul>
+<li class="has-line-data" data-line-start="63" data-line-end="68">
+<p class="has-line-data" data-line-start="63" data-line-end="64"><strong>To do:</strong> Design an algorithm that finds:</p>
+<ul>
+<li class="has-line-data" data-line-start="64" data-line-end="65">the subset of the items by their numbers (chosen from 1 to <em>N</em>).</li>
+<li class="has-line-data" data-line-start="65" data-line-end="66">the maximum value.</li>
+<li class="has-line-data" data-line-start="66" data-line-end="68">if necessary, specify one item to be split by halves by appending <strong>‘x2’</strong> to the item number.</li>
+</ul>
+</li>
+<li class="has-line-data" data-line-start="68" data-line-end="69">
+<p class="has-line-data" data-line-start="68" data-line-end="69"><strong>INPUT:</strong> The input is given by a text file, with each row represents each item’s weight and value. The last line is the maximum weight followed by -1, so you can finish reading the file if the input number is -1.</p>
+</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="70" data-line-end="76">2 3
+3 4
+4 6
+5 7
+8 -1
+</code></pre>
+<p class="has-line-data" data-line-start="76" data-line-end="77">All the values are POSITIVE integers. You may use file I/O, or standard input. From the input file, number of items <em>n</em> = 4, (weight, benefit) of the items are: <code>(2,3), (3,4), (4,6), (5,7)</code>, and <em>W</em> = 8 (max weight).</p>
+<ul>
+<li class="has-line-data" data-line-start="78" data-line-end="79"><strong>OUTPUT:</strong></li>
+</ul>
+<pre><code class="has-line-data" data-line-start="80" data-line-end="82">3x2 12
+</code></pre>
+<h3 class="code-line" data-line-start=83 data-line-end=84 ><a id="4_01_knapsack_with_two_identical_knapsacks_83"></a>4. 0-1 knapsack with two identical knapsacks</h3>
+<p class="has-line-data" data-line-start="85" data-line-end="86">Same as problem 1, except there are <strong>TWO KNAPSACKS</strong> to be filled.</p>
+<ul>
+<li class="has-line-data" data-line-start="87" data-line-end="91">
+<p class="has-line-data" data-line-start="87" data-line-end="88"><strong>To do:</strong> Design an algorithm that finds:</p>
+<ul>
+<li class="has-line-data" data-line-start="88" data-line-end="89">the subset of the items by their numbers (chosen from 1 to <em>N</em>) and <strong>knapsack numbers</strong> (1 or 2).</li>
+<li class="has-line-data" data-line-start="89" data-line-end="91">the maximum value.</li>
+</ul>
+</li>
+<li class="has-line-data" data-line-start="91" data-line-end="92">
+<p class="has-line-data" data-line-start="91" data-line-end="92"><strong>INPUT:</strong> The input is given by a text file, with each row represents each item’s weight and value. The last line is the maximum weights of the <strong>TWO KNAPSACKS</strong> followed by -1, so you can finish reading the file if the input number is -1.</p>
+</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="93" data-line-end="99">2 3
+3 4
+4 6
+5 7
+8 7 -1
+</code></pre>
+<p class="has-line-data" data-line-start="99" data-line-end="100">All the values are POSITIVE integers. You may use file I/O, or standard input. From the input file, number of items <em>n</em> = <code>4</code>, (weight, benefit) of the items are: <code>(2,3), (3,4), (4,6), (5,7)</code>, and <em>W</em> = <code>(8, 7)</code> (max weights).</p>
+<ul>
+<li class="has-line-data" data-line-start="101" data-line-end="102"><strong>OUTPUT:</strong></li>
+</ul>
+<pre><code class="has-line-data" data-line-start="103" data-line-end="105">2 1 4 1 1 2 3 2 20
+</code></pre>
+<ul>
+<li class="has-line-data" data-line-start="106" data-line-end="108"><strong>Note:</strong> may not be solvable by dynamic programming (even the instructor does not know). Consider greedy algorithm.</li>
+</ul>
+
+</body></html>
