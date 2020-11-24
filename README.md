@@ -1,6 +1,12 @@
 # 2019 알고리즘 과제
 
-## HW5
+## HW4 : Knapsack 문제
+<details>
+[과제 설명](https://github.com/ke-nai/C-2019AlgorithmHW/blob/main/HW4/hw4_v2b.md)
+</details>
+
+## HW5 : 길 찾기 문제
+<details>
 [과제 설명](https://github.com/ke-nai/C-2019AlgorithmHW/blob/main/HW5/hw5.pdf)
 ### 1. 알고리즘
 #### 1) 도시의 x, y축 좌표를 배열에 저장한 뒤 정렬.
@@ -53,3 +59,4 @@ x축은 오름차순, y축은 x값이 홀수냐 짝수냐에 따라 오름차순
 #### 2) 의의
 - 모든 경우를 다 확인하는 경우의 시간 복잡도 O(2^N)보다 훨씬 낮은 시간 복잡도(N^2)를 가져서 도시의 수가 아주 많아도 비교적 쉽게 답을 구할 수 있다.
 - 이전의 답에 이어서 다음 답을 구하기 때문에 구해야 할 최대 연료량의 가지 수가 많아져도 연산 시간이 별로 늘어나지 않는다.
+</details>
