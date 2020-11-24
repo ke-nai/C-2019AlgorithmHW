@@ -1,13 +1,14 @@
 # 2019 알고리즘 과제
 
 ## HW4 : Knapsack 문제
-<details>
 [과제 설명](https://github.com/ke-nai/C-2019AlgorithmHW/blob/main/HW4/hw4_v2b.md)
-</details>
+
 
 ## HW5 : 길 찾기 문제
-<details>
 [과제 설명](https://github.com/ke-nai/C-2019AlgorithmHW/blob/main/HW5/hw5.pdf)
+
+<details>
+ 
 ### 1. 알고리즘
 #### 1) 도시의 x, y축 좌표를 배열에 저장한 뒤 정렬.
 ![image](https://user-images.githubusercontent.com/66747535/100071403-5e6eaa80-2e7e-11eb-8d2c-f8bdf00d8afa.png)
